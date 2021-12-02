@@ -64,9 +64,17 @@ ECG Images dataset of Cardiac and COVID-19 Patients from DOI: [10.17632/gwbz3fsg
    import matplotlib.image as mpimg
    %matplotlib inline
    ```
-3. Install NPM packages
+2. Show sample data
    ```sh
-   npm install
+   plt.figure(figsize=(20,20))
+   test_folder=r'Project Bio/data/ECG Data/Resize_CovidECG250'
+   for i in range(10):
+       file = random.choice(os.listdir(test_folder))
+       image_path= os.path.join(test_folder, file)
+       img=mpimg.imread(image_path)
+       ax=plt.subplot(1,10,i+1)
+       ax.title.set_text(file)
+       plt.imshow(img)
    ```
 4. Enter your API in `config.js`
    ```js
