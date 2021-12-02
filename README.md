@@ -49,7 +49,7 @@ ECG Images dataset of Cardiac and COVID-19 Patients from DOI: [10.17632/gwbz3fsg
 ### Installation
 
 1. Install Python Libraries
-   ```sh
+   ```py
    import tensorflow as tf
    from tensorflow.keras import datasets, layers, models
    import matplotlib.pyplot as plt
@@ -65,7 +65,7 @@ ECG Images dataset of Cardiac and COVID-19 Patients from DOI: [10.17632/gwbz3fsg
    %matplotlib inline
    ```
 2. Show sample data
-   ```sh
+   ```py
    plt.figure(figsize=(20,20))
    test_folder=r'Project Bio/data/ECG Data/Resize_CovidECG250'
    for i in range(10):
@@ -77,7 +77,7 @@ ECG Images dataset of Cardiac and COVID-19 Patients from DOI: [10.17632/gwbz3fsg
        plt.imshow(img)
    ```
 4. Enter your API in `config.js`
-   ```js
+   ```py
    const API_KEY = 'ENTER YOUR API';
    ```
 
