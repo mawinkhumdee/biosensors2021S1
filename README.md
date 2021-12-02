@@ -63,11 +63,17 @@ ECG Images dataset of Cardiac and COVID-19 Patients from DOI: [10.17632/gwbz3fsg
    import seaborn as sns
    import matplotlib.image as mpimg
    %matplotlib inline
+   import os
    ```
-2. Show sample data
+2. Set path
+   ```py
+   os.chdir('...folder...')
+   test_folder=r'.../data/ECG Data/Resize_CovidECG250'
+   img_folder=r'.../data/ECG Data/'
+   ```
+3. Show sample data
    ```py
    plt.figure(figsize=(20,20))
-   test_folder=r'Project Bio/data/ECG Data/Resize_CovidECG250'
    for i in range(10):
        file = random.choice(os.listdir(test_folder))
        image_path= os.path.join(test_folder, file)
@@ -76,10 +82,32 @@ ECG Images dataset of Cardiac and COVID-19 Patients from DOI: [10.17632/gwbz3fsg
        ax.title.set_text(file)
        plt.imshow(img)
    ```
-4. Enter your API in `config.js`
+4. Data input size
    ```py
-   const API_KEY = 'ENTER YOUR API';
+   IMG_WIDTH=200
+   IMG_HEIGHT=120
    ```
+5. Function create dataset from folder
+   ```py
+   def create_dataset_PIL(test_folder):
+        img_data_array=[]
+        class_name=[]
+        for dir1 in os.listdir(img_folder):
+            for file in os.listdir(os.path.join(img_folder, dir1)):
+
+                image_path= os.path.join(img_folder, dir1,  file)
+                image= np.array(Image.open(image_path))
+                image= np.resize(image,(IMG_HEIGHT,IMG_WIDTH,3))
+                image = image.astype(int)
+                # image /= 255  
+                img_data_array.append(image)
+                class_name.append(dir1)
+        return img_data_array , class_name
+   ```
+ 6. Create a storage variable
+     ```py
+     PIL_img_data, class_name = create_dataset_PIL(img_folder)
+     ```
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
