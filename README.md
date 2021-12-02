@@ -3,9 +3,6 @@ COVID-19 detection using ECG images with CNN
 
 <div id="top"></div>
 
-
-
-
 <!-- TABLE OF CONTENTS -->
 <details>
   <summary>Table of Contents</summary>
@@ -23,12 +20,7 @@ COVID-19 detection using ECG images with CNN
         <li><a href="#installation">Installation</a></li>
       </ul>
     </li>
-    <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#license">License</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgments">Acknowledgments</a></li>
+    
   </ol>
 </details>
 
@@ -36,10 +28,7 @@ COVID-19 detection using ECG images with CNN
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
-
-Here's a blank template to get started: To avoid retyping too much info. Do a search and replace with your text editor for the following: `github_username`, `repo_name`, `twitter_handle`, `linkedin_username`, `email`, `email_client`, `project_title`, `project_description`
+การตรวจคัดกรองโรคติดเชื้อไวรัสโควิด-19 (COVID-19) ซึ่งมีหลายวิธี เช่น Realtime RT-PCR เป็นวิธีที่ได้รับการยอมรับจากองค์การอนามัยโลก และ Antigen test ทั้งสองวิธีนี้มีข้อดีและข้อเสียที่แตกต่างกัน และยังมีทางเลือกในการตรวจคัดกรองอีกมากมายที่นักวิจัยหลายท่านกำลังศึกษาและพัฒนา หนึ่งในนั้นก็คือ การใช้คลื่นสัญญาณไฟฟ้าหัวใจ(ECG) เนื่องจากโรคติดเชื้อไวรัสโควิด-19เป็นโรคติดเชื้อทางเดินหายใจส่วนล่างซึ่งอาจส่งผลกระทบต่อระบบหัวใจและหลอดเลือดและนำไปสู่ภาวะหัวใจเต้นผิดปกติ และผลจากการทดลองนำภาพคลื่นสัญญาณไฟฟ้าหัวใจของผู้ป่วยและบุคคลปกติโดยใช้โครงข่ายประสาทเทียมแบบคอนโวลูชันในการตรวจคัดกรองเพื่อแยกผู้ป่วยที่ติดเชื้อ มีความแม่นยำ 97.33%
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
