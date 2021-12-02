@@ -28,7 +28,7 @@ COVID-19 detection using ECG images with CNN
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-การตรวจคัดกรองโรคติดเชื้อไวรัสโควิด-19 (COVID-19) ซึ่งมีหลายวิธี เช่น Realtime RT-PCR เป็นวิธีที่ได้รับการยอมรับจากองค์การอนามัยโลก และ Antigen test ทั้งสองวิธีนี้มีข้อดีและข้อเสียที่แตกต่างกัน และยังมีทางเลือกในการตรวจคัดกรองอีกมากมายที่นักวิจัยหลายท่านกำลังศึกษาและพัฒนา หนึ่งในนั้นก็คือ การใช้คลื่นสัญญาณไฟฟ้าหัวใจ(ECG) เนื่องจากโรคติดเชื้อไวรัสโควิด-19เป็นโรคติดเชื้อทางเดินหายใจส่วนล่างซึ่งอาจส่งผลกระทบต่อระบบหัวใจและหลอดเลือดและนำไปสู่ภาวะหัวใจเต้นผิดปกติ และผลจากการทดลองนำภาพคลื่นสัญญาณไฟฟ้าหัวใจของผู้ป่วยและบุคคลปกติโดยใช้โครงข่ายประสาทเทียมแบบคอนโวลูชันในการตรวจคัดกรองเพื่อแยกผู้ป่วยที่ติดเชื้อ มีความแม่นยำ 97.33%
+The World Health Organization accepts several methods of screening for COVID-19, including Realtime RT-PCR and the Antigen test. Many more screening options are being researched and developed by many researchers. An electrocardiogram (ECG) is one of them because COVID-19 is an infectious disease of the lower respiratory tract that can affect the cardiovascular system and cause irregular heartbeats. And the results of an experiment to take electrocardiogram images of patients and healthy people using convolutional neural networks for screening to isolate infected patients with an accuracy of 97.33 percent.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -45,20 +45,24 @@ COVID-19 detection using ECG images with CNN
 
 ECG Images dataset of Cardiac and COVID-19 Patients from DOI: [10.17632/gwbz3fsgp8.1](https://data.mendeley.com/datasets/gwbz3fsgp8/1)
 
-### Prerequisites
-
-This is an example of how to list things you need to use the software and how to install them.
-* npm
-  ```sh
-  npm install npm@latest -g
-  ```
 
 ### Installation
 
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
+1. Install Python Libraries
    ```sh
-   git clone https://github.com/github_username/repo_name.git
+   import tensorflow as tf
+   from tensorflow.keras import datasets, layers, models
+   import matplotlib.pyplot as plt
+   import numpy as np
+   import pandas as pd
+   from PIL import Image
+   from sklearn.model_selection import train_test_split
+   import random
+   from sklearn.metrics import classification_report, confusion_matrix
+   import itertools 
+   import seaborn as sns
+   import matplotlib.image as mpimg
+   %matplotlib inline
    ```
 3. Install NPM packages
    ```sh
