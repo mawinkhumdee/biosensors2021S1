@@ -32,18 +32,9 @@ COVID-19 detection using ECG images with CNN
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-
-
 ### Built With
 
-* [Next.js](https://nextjs.org/)
-* [React.js](https://reactjs.org/)
-* [Vue.js](https://vuejs.org/)
-* [Angular](https://angular.io/)
-* [Svelte](https://svelte.dev/)
-* [Laravel](https://laravel.com)
-* [Bootstrap](https://getbootstrap.com)
-* [JQuery](https://jquery.com)
+* [python]
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -52,8 +43,7 @@ COVID-19 detection using ECG images with CNN
 <!-- GETTING STARTED -->
 ## Getting Started
 
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
+ECG Images dataset of Cardiac and COVID-19 Patients from DOI: [10.17632/gwbz3fsgp8.1](https://data.mendeley.com/datasets/gwbz3fsgp8/1)
 
 ### Prerequisites
 
