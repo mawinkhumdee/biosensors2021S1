@@ -104,11 +104,60 @@ ECG Images dataset of Cardiac and COVID-19 Patients from DOI: [10.17632/gwbz3fsg
                 class_name.append(dir1)
         return img_data_array , class_name
    ```
- 6. Create a storage variable
-     ```py
-     PIL_img_data, class_name = create_dataset_PIL(img_folder)
-     ```
-
+6. Create a storage variable
+   ```py
+   PIL_img_data, class_name = create_dataset_PIL(img_folder)
+   ```
+7. Change class name to number (Resize_CovidECG250': 0, Resize_NormalECG250: 1)
+   ```py
+   target_dict={k: v for v, k in enumerate(np.unique(class_name))}
+   target_val=  [target_dict[class_name[i]] for i in range(len(class_name))]
+   target_val = np.asarray(target_val)
+   PIL_img_data = np.asarray(PIL_img_data)
+   ```
+8. Split train and test data
+   ```py
+   train_images,test_images,train_labels,test_labels = train_test_split(PIL_img_data,target_val,test_size=0.3,random_state=2)
+   ```
+9. CNN Architecture
+   ```py
+    num_classes = 2 #output nodes
+    model = models.Sequential([
+      layers.Rescaling(1./255, input_shape=(120, 200, 3)),
+      layers.Conv2D(16, 3, padding='same', activation='relu'),
+      layers.MaxPooling2D(),
+      layers.Conv2D(32, 3, padding='same', activation='relu'),
+      layers.MaxPooling2D(),
+      layers.Conv2D(64, 3, padding='same', activation='relu'),
+      layers.MaxPooling2D(),
+      layers.Dropout(0.2),
+      layers.Flatten(),
+      layers.Dense(128, activation='relu'),
+      layers.Dense(64, activation='relu'),
+      layers.Dense(32, activation='relu'),
+      layers.Dense(num_classes, activation='sigmoid')
+    ])
+    model.compile(optimizer='adam',
+              loss=tf.keras.losses.SparseCategoricalCrossentropy(from_logits=True),
+              metrics=['accuracy'])
+    model.summary()
+   ```
+10. Trianing
+    ```py
+    epochs=10
+    history = model.fit(train_images, train_labels, epochs=epochs, validation_data=(test_images, test_labels))
+    ```
+11. Evaluations
+    ```py
+    target_names = ['Covid','Normal']
+    y_pred = np.argmax(predictions, axis=1)
+    print('Confusion Matrix')
+    cm = confusion_matrix(test_labels, y_pred)
+    # plot_confusion_matrix(cm, target_names, title='Confusion Matrix')
+    print('Classification Report')
+    print(classification_report(test_labels, y_pred, target_names=target_names))
+    ```
+   
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
